@@ -1,0 +1,16 @@
+---
+- name: Configure EC2 host and deploy the Dockerized Python app
+  hosts: all
+  become: true
+  gather_facts: true
+
+  vars:
+    docker_image: your-dockerhub-username/cicd-python-app
+    docker_tag: latest
+    app_container_name: python-app
+    app_host_port: 80
+    app_container_port: 5000
+
+  roles:
+    - docker
+    - app
