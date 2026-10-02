@@ -69,7 +69,7 @@ pipeline {
                 '''
             }
         }
-
+        
         stage('Push to Docker Hub') {
             when { expression { !params.DESTROY_INFRA } }
             steps {
